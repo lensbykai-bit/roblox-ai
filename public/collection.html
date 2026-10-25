@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080c1b">
+<meta name="description" content="Explore Roblox AI's thousands of UI, game design, animation, VFX and documentation reference images without leaving the website.">
+<title>Explore Collections — Roblox AI</title>
+<style>
+:root{--bg:#080c1b;--panel:#11192d;--panel-2:#161f36;--stroke:#273351;--muted:#9baac9;--text:#f4f7ff;--violet:#a998ff;--cyan:#5fd8fa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif;line-height:1.55}
+body:before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse at 50% 0%,#39307822,transparent 45%);pointer-events:none;z-index:-1}
+a{color:inherit;text-decoration:none}button,input{font:inherit}button{cursor:pointer}a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.shell{max-width:1390px;margin:auto;padding:0 28px}
+.topbar{border-bottom:1px solid #ffffff14;background:#080c1be8;backdrop-filter:blur(16px);position:sticky;z-index:20;top:0}
+.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:20px;letter-spacing:-.7px;font-weight:850;display:flex;align-items:center;gap:10px}
+.brand-icon{background:linear-gradient(135deg,#56d7fc,#986dff);width:38px;height:38px;display:grid;place-items:center;border-radius:12px;color:#081329;font-weight:900}.brand strong{color:var(--violet)}
+.nav-right{display:flex;align-items:center;gap:24px}.nav-right a{color:#bcc9e4;font-size:13px;font-weight:700}.nav-right a:hover{color:white}
+.main{padding-top:30px;padding-bottom:75px}
+.crumb{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:12px;color:#98a7c7;margin-bottom:23px}
+.crumb a:hover{color:white}.crumb .sep{color:#596587}.crumb .current{color:#dddbff}
+.intro{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:30px}
+.overline{font-size:11px;font-weight:850;letter-spacing:1.8px;color:var(--violet);text-transform:uppercase}
+h1{margin:7px 0 7px;font-size:clamp(28px,3.3vw,43px);line-height:1.12;letter-spacing:-1.3px}
+.subtitle{font-size:14px;color:var(--muted);max-width:680px;margin:0}.intro-stat{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;background:#201d43;border:1px solid #6153bc;border-radius:11px;color:#c8bfff;font-size:12px;font-weight:800;white-space:nowrap}
+.content{display:grid;grid-template-columns:236px minmax(0,1fr);gap:25px;align-items:start}
+.sidebar{position:sticky;top:94px;padding:18px 12px;border:1px solid var(--stroke);background:#10182b;border-radius:17px}
+.sidebar-heading{font-size:11px;letter-spacing:1.3px;color:#8e9ebb;text-transform:uppercase;font-weight:900;padding:5px 10px 11px}
+.side-link{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:10px;font-size:13px;font-weight:700;color:#aab8d3;transition:.15s}.side-link:hover{background:#1c2743;color:white}.side-link.active{background:#5547bf38;color:#d5caff;border:1px solid #6f5ddc4e;padding:9px 11px}
+.side-link .side-icon{font-size:18px;min-width:22px}
+.browser{min-width:0}.tools{background:#11192e;border:1px solid var(--stroke);padding:15px;border-radius:15px;margin-bottom:23px;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.search{min-width:230px;flex:1;border:1px solid #33415f;color:white;background:#0b1122;padding:12px 15px;border-radius:10px;outline:none}.search::placeholder{color:#7786a4}
+.filter{border:1px solid #34415d;background:#1b2640;color:#aebddd;border-radius:9px;padding:10px 13px;font-size:12px;font-weight:750}.filter.active{color:white;background:#5d52cf;border-color:#8576ef}
+.sectiontitle{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:27px 0 14px}.sectiontitle h2{font-size:19px;letter-spacing:-.3px;margin:0}.sectiontitle span{font-size:12px;color:#8295b8}
+.folders{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.folder{display:flex;align-items:center;gap:12px;padding:13px;background:#121b31;border:1px solid #2a3654;border-radius:13px;min-width:0;transition:.18s}
+.folder:hover{background:#1d2946;border-color:#8271e8;transform:translateY(-2px)}
+.folder-preview{width:68px;height:68px;flex:none;background:linear-gradient(135deg,#413c82,#172d53);border-radius:9px;overflow:hidden;display:grid;place-items:center;color:#d8d5ff;font-size:25px}
+.folder-preview img{width:100%;height:100%;object-fit:cover}
+.folder-content{min-width:0;flex:1}.folder-content strong{display:block;line-height:1.35;font-size:13px;word-wrap:break-word;overflow-wrap:anywhere}.folder-content small{display:block;color:#91a3c1;font-size:11px;margin-top:5px}.folder .arrow{color:#ad9cff;align-self:flex-start;font-size:12px}
+.media-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.media-card{min-width:0;border:1px solid #2b3652;background:#121a2e;border-radius:13px;overflow:hidden;cursor:pointer;text-align:left;color:var(--text);padding:0;transition:.18s}
+.media-card:hover{border-color:#9483ee;box-shadow:0 16px 30px #0004;transform:translateY(-3px)}
+.media-img{height:172px;background:linear-gradient(145deg,#1a2645,#343463);overflow:hidden;display:grid;place-items:center;color:#c5baff;font-size:29px}
+.media-img img{height:100%;width:100%;object-fit:cover;display:block}
+.media-meta{padding:12px 13px 13px}.media-name{font-size:12px;font-weight:800;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:34px;overflow-wrap:anywhere}
+.media-type{font-size:10px;color:#92a2c2;margin-top:6px;letter-spacing:.35px}
+.more{display:flex;justify-content:center;margin-top:28px}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;font-size:13px;font-weight:800;color:white;border:1px solid #6e64cc;background:#5347b7;border-radius:10px}
+.button:hover{background:#6e59d2}.button.secondary{background:#18213a;border-color:#394563}.button.secondary:hover{background:#283557}
+.message{border:1px dashed #394666;border-radius:14px;padding:36px 22px;text-align:center;color:var(--muted);font-size:14px}
+.loading{min-height:200px;display:flex;align-items:center;justify-content:center;gap:12px;color:#bac9e4;font-size:14px}
+.loader{width:21px;height:21px;border:3px solid #394468;border-top-color:#ab95ff;border-radius:100%;animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.notice{margin-top:35px;border-top:1px solid #26324b;padding-top:20px;color:#8a9cbb;font-size:12px}.notice a{color:#b5a7ff}
+footer{border-top:1px solid #1e2942;padding:25px 0;color:#8b9bb8;font-size:12px}
+dialog{border:0;padding:0;background:#0c1121;color:white;width:min(1000px,calc(100vw - 30px));max-height:calc(100vh - 30px);border-radius:17px;overflow:hidden;box-shadow:0 20px 100px #000b}
+dialog::backdrop{background:#03050ce8;backdrop-filter:blur(8px)}.modal-header{padding:13px 17px;border-bottom:1px solid #2d3651;display:flex;gap:12px;align-items:center}
+.modal-header-text{flex:1;min-width:0}.modal-title{font-size:13px;font-weight:800;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.modal-path{font-size:11px;color:#8798b9;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.iconbutton{flex:none;border:1px solid #354263;background:#1a233e;color:#d2dfff;border-radius:9px;padding:9px 13px}
+.iconbutton:hover{background:#3b4370}.modal-body{height:min(70vh,670px);min-height:200px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:repeating-conic-gradient(#141b2c 0% 25%,#111728 0% 50%) 50% / 25px 25px}
+.modal-body img,.modal-body video{max-width:100%;max-height:100%;object-fit:contain}
+.modal-direction{position:absolute;top:50%;transform:translateY(-50%);background:#0f162cc9;border:1px solid #566182;color:white;font-size:24px;width:40px;height:52px;border-radius:10px}
+.modal-direction.previous{left:12px}.modal-direction.next{right:12px}.modal-direction:disabled{opacity:.23;cursor:default}
+.modal-footer{border-top:1px solid #2d3651;padding:11px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;color:#9badca;font-size:12px}.modal-footer a{color:#baaaff}
+@media(max-width:1100px){.media-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.folders{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:750px){.shell{padding:0 17px}.content{grid-template-columns:1fr;gap:16px}.sidebar{position:static;display:flex;align-items:center;overflow-x:auto;padding:9px;gap:4px}.sidebar-heading{display:none}.side-link{white-space:nowrap;flex:none;font-size:12px}.intro{align-items:start;flex-direction:column;gap:12px}.folders{grid-template-columns:repeat(2,minmax(0,1fr))}.media-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.media-img{height:160px}.nav-right .secondary-link{display:none}}
+@media(max-width:440px){.folders{grid-template-columns:1fr}.media-grid{gap:10px}.media-img{height:145px}.tools{gap:7px;padding:10px}.search{min-width:100%;font-size:13px}.filter{padding:9px 12px}.folder-preview{width:62px;height:62px}.modal-footer{font-size:11px}.modal-direction{width:33px;height:43px}.nav-right{gap:10px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="shell nav"><a class="brand" href="/"><span class="brand-icon">✦</span><span>ROBLOX <strong>AI</strong></span></a><nav class="nav-right" aria-label="Site navigation"><a href="/">⌂ Home</a><a class="secondary-link" href="/#styles">Explore styles</a><a class="secondary-link" href="https://github.com/lensbykai-bit/roblox-ai" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav></div></header>
+<main class="shell main">
+<nav class="crumb" id="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep">/</span><span class="current">Collections</span></nav>
+<div class="intro"><div><div class="overline">Reference gallery · Browse inside Roblox AI</div><h1 id="heading">Browse collections</h1><p class="subtitle" id="subheading">Open a collection, browse its folders, and preview images right here on this website.</p></div><span class="intro-stat" id="totalCount">Loading catalog…</span></div>
+<div class="content"><aside class="sidebar" id="sidebar" aria-label="Categories"></aside><div class="browser">
+  <div class="tools"><input id="search" class="search" type="search" placeholder="Search images and folders…" aria-label="Search images and folders"><button class="filter active" data-kind="all" aria-pressed="true">All</button><button class="filter" data-kind="image" aria-pressed="false">Images</button><button class="filter" data-kind="video" aria-pressed="false">Clips</button></div>
+  <div id="results" aria-live="polite"><div class="loading"><span class="loader"></span> Loading reference library…</div></div>
+  <div class="notice">Images and clips are shown for design reference only. Rights remain with their respective creators. Use original or appropriately licensed assets in your projects. <a href="https://github.com/lensbykai-bit/roblox-ai/blob/main/README.md#usage-and-attribution" target="_blank" rel="noopener noreferrer">About usage and attribution ↗</a></div>
+</div></div>
+</main>
+<footer><div class="shell">ROBLOX AI · Independent visual reference library · Not affiliated with or endorsed by Roblox Corporation.</div></footer>
+<dialog id="preview" aria-label="Media preview"><div class="modal-header"><div class="modal-header-text"><div class="modal-title" id="modalTitle"></div><div class="modal-path" id="modalPath"></div></div><button id="closeModal" class="iconbutton" type="button" aria-label="Close preview">✕</button></div><div class="modal-body" id="modalBody"><button class="modal-direction previous" id="prev" aria-label="Previous image">‹</button><div id="modalMedia" style="display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-width:0"></div><button class="modal-direction next" id="next" aria-label="Next image">›</button></div><div class="modal-footer"><span id="modalCounter"></span><a id="source" href="#" target="_blank" rel="noopener noreferrer">View original on GitHub ↗</a></div></dialog>
+<script>
+(function(){
+"use strict";
+const OWNER="lensbykai-bit",REPO="roblox-ai",BRANCH="main";
+const PREFIX="https://raw.githubusercontent.com/"+OWNER+"/"+REPO+"/"+BRANCH+"/";
+const REPO_URL="https://github.com/"+OWNER+"/"+REPO+"/blob/"+BRANCH+"/";
+const CATEGORIES=[
+  ["roblox-docs","Roblox Creator Docs","📘"],["previews","Previews","🖼️"],["game-refs","Game References","🎮"],["visual-refs","Visual References","💎"],["style-refs","Style References","🎨"],["ui-styles","UI Styles","🧩"],["vfx","VFX","✨"],["animations","Animations","🏃"],["sfx","SFX","🔊"],["logos","Logos","🔷"],["thumbnails","Thumbnails","🪄"],["cutscenes","Cutscenes","🎬"]
+];
+const $=id=>document.getElementById(id);
+const safe=s=>String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const label=s=>String(s).replace(/[-_]/g," ").replace(/\b\w/g,c=>c.toUpperCase());
+const urlFor=p=>"/collection.html?path="+encodeURIComponent(p);
+const srcFor=p=>PREFIX+p.split("/").map(encodeURIComponent).join("/");
+const isVideo=p=>/\.(mp4|webm|mov)$/i.test(p);
+const isImage=p=>/\.(png|jpe?g|webp|gif|svg|avif)$/i.test(p);
+const formatCount=n=>n.toLocaleString("en-US");
+const dirname=p=>p.includes("/")?p.slice(0,p.lastIndexOf("/")):"";
+const basename=p=>p.slice(p.lastIndexOf("/")+1);
+let all=[],folderCount=new Map(),folderCover=new Map(),path="",filter="all",query="",limit=64,visible=[],modalAt=0,requestCache=null;
+function cleanPath(p){
+ p=String(p||"").replace(/^\/+|\/+$/g,"");
+ if(!p)return "";
+ let parts=p.split("/");
+ if(!CATEGORIES.some(c=>c[0]===parts[0]) || parts.some(s=>!s||s==="."||s===".."||/[?#\u0000-\u001f]/.test(s)))return "";
+ return p;
+}
+function nameFor(p){
+ const match=CATEGORIES.find(c=>c[0]===p);return match?match[1]:label(basename(p));
+}
+function iconFor(p){const item=CATEGORIES.find(c=>c[0]===p);return item?item[2]:"📁";}
+function isInDir(p,dir){return !dir||p.startsWith(dir+"/");}
+function statFor(dir){return folderCount.get(dir)||0;}
+function buildIndex(){
+ folderCount.clear();folderCover.clear();
+ all.forEach(file=>{
+   const segments=file.path.split("/");
+   for(let i=1;i<segments.length;i++){
+      const dir=segments.slice(0,i).join("/");
+      folderCount.set(dir,(folderCount.get(dir)||0)+1);
+      if(!folderCover.has(dir)&&isImage(file.path))folderCover.set(dir,file.path);
+   }
+ });
+}
+function makeSidebar(){
+ $("sidebar").innerHTML='<div class="sidebar-heading">Collections</div>'+CATEGORIES.map(c=>
+ '<a class="side-link '+(path.split("/")[0]===c[0]?"active":"")+'" href="'+urlFor(c[0])+'"><span class="side-icon">'+c[2]+'</span><span>'+safe(c[1])+'</span></a>').join("");
+}
+function makeCrumbs(){
+ const pieces=path?path.split("/"):[];
+ let html='<a href="/">Home</a><span class="sep">/</span><a href="/collection.html">Collections</a>';
+ let accum="";
+ for(const [i,s] of pieces.entries()){
+   accum=accum?accum+"/"+s:s;
+   html+='<span class="sep">/</span>';
+   html+=(i===pieces.length-1?'<span class="current">'+safe(nameFor(accum))+'</span>':'<a href="'+urlFor(accum)+'">'+safe(nameFor(accum))+'</a>');
+ }
+ $("breadcrumbs").innerHTML=html;
+}
+function setHeader(){
+ $("heading").textContent=path?nameFor(path):"Browse every collection";
+ const count=path?statFor(path):all.length;
+ $("totalCount").textContent=formatCount(count)+" reference assets";
+ $("subheading").textContent=path?"Browse subfolders and preview images without leaving this website.":"Explore every collection and open its images directly on Roblox AI.";
+ document.title=(path?nameFor(path)+" — ":"Explore Collections — ")+"Roblox AI";
+ makeCrumbs();makeSidebar();
+}
+function available(){
+ if(!path)return CATEGORIES.map(c=>({path:c[0],name:c[1],count:statFor(c[0]),cover:folderCover.get(c[0]),icon:c[2]}));
+ const direct=new Set();
+ for(const f of all){
+   if(!isInDir(f.path,path))continue;
+   let rest=f.path.slice(path.length+1);
+   if(rest.includes("/"))direct.add(path+"/"+rest.slice(0,rest.indexOf("/")));
+ }
+ return [...direct].sort((a,b)=>a.localeCompare(b,undefined,{numeric:true})).map(d=>({path:d,name:nameFor(d),count:statFor(d),cover:folderCover.get(d),icon:"📁"}));
+}
+function render(){
+ const isSearching=Boolean(query);
+ let folders=available();
+ let media=all.filter(f=>isInDir(f.path,path)&&(isSearching||dirname(f.path)===path));
+ if(filter==="image"){folders=[];media=media.filter(f=>isImage(f.path));}
+ if(filter==="video"){folders=[];media=media.filter(f=>isVideo(f.path));}
+ if(query){
+  folders=folders.filter(d=>d.name.toLowerCase().includes(query));
+  media=media.filter(f=>(basename(f.path)+" "+f.path).toLowerCase().includes(query));
+ }
+ media.sort((a,b)=>a.path.localeCompare(b.path,undefined,{numeric:true}));
+ visible=media;
+ const showMedia=media.slice(0,limit);
+ let out="";
+ if(folders.length){
+   out+='<div class="sectiontitle"><h2>'+(path?"Folders":"Collections")+'</h2><span>'+formatCount(folders.length)+' folders</span></div><div class="folders">'+folders.map(d=>'<a class="folder" href="'+urlFor(d.path)+'"><span class="folder-preview">'+(d.cover?'<img loading="lazy" src="'+srcFor(d.cover)+'" alt="">':d.icon)+'</span><span class="folder-content"><strong>'+safe(d.name)+'</strong><small>'+formatCount(d.count)+' assets</small></span><span class="arrow">↗</span></a>').join("")+'</div>';
+ }
+ if(media.length){
+   out+='<div class="sectiontitle"><h2>'+(query?"Matching media":"Image & video previews")+'</h2><span>'+formatCount(media.length)+' files</span></div><div class="media-grid">'+showMedia.map((f,i)=>'<button class="media-card" type="button" data-at="'+i+'" aria-label="Preview '+safe(basename(f.path))+'"><span class="media-img">'+(isVideo(f.path)?"▶":'<img loading="lazy" src="'+srcFor(f.path)+'" alt="'+safe(basename(f.path))+'">')+'</span><span class="media-meta"><span class="media-name">'+safe(label(basename(f.path).replace(/\.[^/.]+$/,"")))+'</span><span class="media-type">'+safe(f.path.split(".").pop().toUpperCase())+' · '+(f.size>=1048576?(f.size/1048576).toFixed(1)+" MB":Math.round(f.size/1024)+" KB")+'</span></span></button>').join("")+'</div>';
+   if(showMedia.length<media.length)out+='<div class="more"><button id="loadMore" class="button secondary" type="button">Load more ('+formatCount(media.length-showMedia.length)+' remaining) ↓</button></div>';
+ }
+ if(!folders.length&&!media.length)out='<div class="message">'+(query?"No matching references. Try another search.":filter==="video"?"No clips in this folder.":"This folder has no directly listed media. Open another collection.")+'</div>';
+ $("results").innerHTML=out;
+ const more=$("loadMore");if(more)more.addEventListener("click",()=>{limit+=64;render()});
+ $("results").querySelectorAll("[data-at]").forEach(el=>el.addEventListener("click",()=>showModal(Number(el.dataset.at))));
+}
+function showModal(index){
+ modalAt=index;const f=visible[modalAt];if(!f)return;
+ $("modalTitle").textContent=label(basename(f.path).replace(/\.[^.]+$/,""));
+ $("modalPath").textContent=f.path;
+ $("source").href=REPO_URL+f.path.split("/").map(encodeURIComponent).join("/");
+ $("modalCounter").textContent=(modalAt+1)+" / "+visible.length+" · Reference only";
+ $("prev").disabled=modalAt<=0;$("next").disabled=modalAt>=visible.length-1;
+ const elem=isVideo(f.path)?document.createElement("video"):document.createElement("img");
+ elem.src=srcFor(f.path);
+ if(isVideo(f.path)){elem.controls=true;elem.preload="metadata";}else{elem.alt=basename(f.path);elem.decoding="async";}
+ $("modalMedia").replaceChildren(elem);
+ if(!$("preview").open)$("preview").showModal();
+}
+function navigateTo(p){
+ path=cleanPath(p);history.pushState({path},"",path?urlFor(path):"/collection.html");query="";$("search").value="";filter="all";limit=64;document.querySelectorAll("[data-kind]").forEach(el=>{el.classList.toggle("active",el.dataset.kind==="all");el.setAttribute("aria-pressed",el.dataset.kind==="all"?"true":"false")});setHeader();render();window.scrollTo({top:0,behavior:"instant"});
+}
+document.addEventListener("click",e=>{
+ const a=e.target.closest('a[href^="/collection.html"]');if(!a)return;
+ if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target==="_blank")return;
+ e.preventDefault();const u=new URL(a.href,location.href);navigateTo(u.searchParams.get("path")||"");
+});
+window.addEventListener("popstate",()=>{path=cleanPath(new URLSearchParams(location.search).get("path"));query="";$("search").value="";limit=64;setHeader();render()});
+$("search").addEventListener("input",e=>{query=e.target.value.toLowerCase().trim();limit=64;render()});
+document.querySelectorAll("[data-kind]").forEach(b=>b.addEventListener("click",()=>{filter=b.dataset.kind;limit=64;document.querySelectorAll("[data-kind]").forEach(x=>{const on=x===b;x.classList.toggle("active",on);x.setAttribute("aria-pressed",String(on));});render()}));
+$("closeModal").addEventListener("click",()=>$("preview").close());
+$("prev").addEventListener("click",()=>showModal(Math.max(0,modalAt-1)));
+$("next").addEventListener("click",()=>showModal(Math.min(visible.length-1,modalAt+1)));
+$("preview").addEventListener("click",e=>{if(e.target===$("preview"))$("preview").close()});
+document.addEventListener("keydown",e=>{if(!$("preview").open)return;if(e.key==="ArrowLeft"&&modalAt>0)showModal(modalAt-1);if(e.key==="ArrowRight"&&modalAt<visible.length-1)showModal(modalAt+1)});
+async function init(){
+ try{
+   const response=await fetch("/media-index.json",{cache:"force-cache"});
+   if(!response.ok)throw Error("Catalog could not be loaded ("+response.status+")");
+   const data=await response.json();
+   if(!Array.isArray(data.assets))throw Error("Catalog format unavailable");
+   all=data.assets.map(e=>({path:e[0],size:e[1]})).filter(f=>f.path&&typeof f.path==="string"&&(isImage(f.path)||isVideo(f.path))).sort((a,b)=>a.path.localeCompare(b.path,undefined,{numeric:true}));
+   buildIndex();
+   path=cleanPath(new URLSearchParams(location.search).get("path"));
+   setHeader();render();
+ }catch(err){
+   $("results").innerHTML='<div class="message"><strong>Could not load the image gallery.</strong><p>'+safe(err.message)+'</p><button id="retry" class="button">Retry</button></div>';
+   $("retry").addEventListener("click",init);
+   $("totalCount").textContent="Catalog unavailable";
+ }
+}
+init();
+})();
+</script>
+</body>
+</html>
