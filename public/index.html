@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090e20">
+  <meta name="description" content="Roblox AI — curated game design reference library: UI, game thumbnails, style kits, animations, VFX, and Roblox Studio documentation.">
+  <title>Roblox AI — Visual Reference Library</title>
+  <style>
+    :root{--bg:#080c1b;--panel:#121a30;--panel2:#17213a;--stroke:#26314d;--text:#f4f7ff;--muted:#9baac9;--brand:#8b7cfa;--cyan:#57d4f9}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}
+    body:before{content:"";position:absolute;left:0;right:0;top:0;height:670px;background:radial-gradient(ellipse at 68% 21%,#493a9f3d,transparent 42%),radial-gradient(ellipse at 22% 0%,#1a88b929,transparent 48%);z-index:-1;pointer-events:none}
+    a{color:inherit;text-decoration:none}button,input{font:inherit}button{cursor:pointer}a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+    .shell{max-width:1220px;margin:auto;padding:0 28px}.topbar{border-bottom:1px solid #ffffff12;background:#080c1be8;backdrop-filter:blur(18px);position:sticky;top:0;z-index:10}
+    .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:22px;display:flex;align-items:center;gap:12px;font-weight:850;letter-spacing:-.7px}
+    .brand-icon{width:40px;height:40px;border-radius:13px;background:linear-gradient(130deg,#55d9ff,#926bff);display:grid;place-items:center;box-shadow:0 8px 28px #6056fa45;font-size:20px;color:#090f25}
+    .brand strong{color:#a99bff}.navlinks{display:flex;align-items:center;gap:30px;font-size:14px;color:#b9c6de;font-weight:600}.navlinks a:hover{color:white}
+    .btn{border:1px solid #ffffff24;border-radius:12px;padding:11px 17px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:14px;background:#ffffff0c;color:white;transition:.16s}
+    .btn:hover{transform:translateY(-2px);background:#ffffff18}.btn.primary{background:linear-gradient(120deg,#665be6,#9c70f8);border-color:#af9bff66;box-shadow:0 10px 24px #7151ed30}.btn.primary:hover{filter:brightness(1.1)}
+    .hero{display:grid;grid-template-columns:1fr .94fr;gap:45px;align-items:center;padding:76px 0 70px}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #a390fb47;background:#7f6ef621;padding:7px 13px;border-radius:30px;color:#c7bfff;font-size:12px;font-weight:800;letter-spacing:.6px}
+    .dot{width:7px;height:7px;border-radius:50%;background:#50ebb8;box-shadow:0 0 12px #50ebb8}h1{font-size:clamp(42px,5vw,69px);line-height:1.08;letter-spacing:-2.4px;margin:22px 0 20px;font-weight:900}h1 em{font-style:normal;background:linear-gradient(90deg,#66d5ff,#a68bff,#ef91f7);background-clip:text;-webkit-background-clip:text;color:transparent}
+    .hero p{color:var(--muted);font-size:17px;max-width:550px;margin:0 0 25px}.khmer{font-size:13px!important;color:#b6bcda!important}.actions{display:flex;flex-wrap:wrap;gap:12px}.hero-art{height:405px;position:relative}
+    .art-main,.art-small{position:absolute;border:1px solid #a39eea4f;padding:7px;background:#151a35;border-radius:20px;box-shadow:0 18px 60px #0008;overflow:hidden}
+    .art-main{width:72%;height:84%;top:7%;left:15%;transform:rotate(-3deg)}.art-main img,.art-small img{width:100%;height:100%;border-radius:12px;object-fit:cover;display:block}.art-small{width:45%;height:45%;right:0;top:0;transform:rotate(8deg)}.art-small.bottom{width:46%;height:42%;bottom:0;left:0;top:auto;transform:rotate(6deg)}
+    .art-spark{position:absolute;background:#222646;border:1px solid #857df067;box-shadow:0 12px 24px #0008;color:#b7afff;border-radius:20px;padding:8px 16px;font-weight:800;font-size:12px;right:0;bottom:8px}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--stroke);background:#10172a;border-radius:18px;overflow:hidden;margin:0 0 84px}
+    .stat{padding:25px 22px;border-right:1px solid var(--stroke)}.stat:last-child{border-right:0}.stat strong{display:block;font-size:29px;letter-spacing:-1px}.stat span{font-size:13px;color:var(--muted)}
+    section{margin-bottom:90px}.sectionhead{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:25px}.overline{text-transform:uppercase;font-size:11px;color:#a99bff;letter-spacing:2px;font-weight:850}
+    h2{font-size:clamp(25px,3vw,35px);line-height:1.15;margin:9px 0;letter-spacing:-1px}.sectionhead p,.section-sub{color:var(--muted);margin:6px 0 0;font-size:14px}
+    .filterbox{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:24px}.search{flex:1;min-width:210px;background:#121a30;border:1px solid var(--stroke);padding:13px 16px;color:white;border-radius:11px;outline:none}.search::placeholder{color:#8c9cbb}.chips{display:flex;gap:7px;flex-wrap:wrap}
+    .chip{color:#aab8d6;padding:10px 15px;border:1px solid #2a3451;background:#141c32;border-radius:10px;font-weight:700;font-size:12px}.chip.active{background:#6559db;color:white;border-color:#8674ff}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.tile{border:1px solid var(--stroke);border-radius:16px;overflow:hidden;background:#11182a;transition:.2s}.tile:hover{transform:translateY(-5px);border-color:#9f8cfa9c;box-shadow:0 20px 50px #03061275}
+    .tile img{width:100%;height:206px;display:block;object-fit:cover;background:linear-gradient(140deg,#252d4c,#302358)}.tile-text{padding:17px 19px 20px}.tile-row{display:flex;justify-content:space-between;gap:12px;align-items:center}.tile h3{font-size:17px;letter-spacing:-.4px;margin:0}.tile-tag{font-size:10px;border:1px solid #927cff60;background:#9176ff1f;color:#c7bafb;padding:4px 8px;border-radius:8px;white-space:nowrap}.tile p{margin:9px 0 14px;color:#9dabc8;font-size:13px;min-height:40px}
+    .tile-link{font-size:13px;font-weight:750;color:#a99cff}.tile-link:hover{color:white}.empty{padding:44px;text-align:center;border:1px dashed var(--stroke);border-radius:14px;color:#9daacc;display:none}
+    .collections{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.collection{background:#121a2d;border:1px solid var(--stroke);border-radius:13px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:.18s}
+    .collection:hover{border-color:#9986ff;background:#1b2544}.coll-left{display:flex;gap:12px;align-items:center}.coll-icon{width:39px;height:39px;border-radius:12px;background:#252f4b;display:grid;place-items:center;font-size:20px}.coll-name{font-size:14px;font-weight:800}.coll-count{font-size:12px;color:var(--muted)}.coll-arrow{color:#96a6c8}
+    .guide{display:grid;grid-template-columns:1fr 1fr;gap:32px;border:1px solid #504d8d;border-radius:22px;background:linear-gradient(140deg,#191a3c,#0e2037);padding:35px}.steps{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:15px}.steps li{display:flex;gap:12px;align-items:flex-start;color:#b9c9df;font-size:14px}.num{flex:none;width:27px;height:27px;display:grid;place-items:center;background:#6e61d3;border-radius:8px;font-size:12px;color:white;font-weight:900}
+    .prompt{background:#080c1f;border:1px solid #3d4870;padding:22px;border-radius:14px;position:relative}.prompt pre{margin:12px 0 12px;white-space:pre-wrap;color:#b6cff6;font:13px/1.8 ui-monospace,SFMono-Regular,Consolas,monospace}.prompt .prompttitle{color:#9aaaf7;font-size:12px;font-weight:850;letter-spacing:1px;text-transform:uppercase}
+    footer{border-top:1px solid var(--stroke);padding:28px 0 50px;color:#899bb9;font-size:13px}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}footer a{color:#baaeff}
+    @media(max-width:900px){.hero{gap:25px}.hero-art{height:300px}.grid,.collections{grid-template-columns:repeat(2,minmax(0,1fr))}.guide{grid-template-columns:1fr}.navlinks .hide-mobile{display:none}}
+    @media(max-width:650px){.shell{padding:0 18px}.nav{min-height:65px}.navlinks{gap:9px}.navlinks .btn{font-size:12px;padding:9px 10px}.brand{font-size:18px;gap:8px}.brand-icon{width:34px;height:34px}.hero{display:flex;flex-direction:column;align-items:stretch;padding:53px 0 36px}.hero p{font-size:15px}.hero-art{height:270px;width:100%;max-width:400px;align-self:center}h1{font-size:43px;letter-spacing:-1.7px}.stats{grid-template-columns:repeat(2,1fr);margin-bottom:65px}.stat{padding:16px;border-bottom:1px solid var(--stroke)}.stat:nth-child(2){border-right:0}.stat:nth-child(n+3){border-bottom:0}.stat strong{font-size:24px}.grid,.collections{grid-template-columns:1fr}.tile img{height:230px}.sectionhead{align-items:flex-start;flex-direction:column}section{margin-bottom:62px}.guide{padding:22px}.filterbox{align-items:stretch;flex-direction:column}.search{width:100%}}
+  </style>
+</head>
+<body>
+  <header class="topbar"><div class="shell nav">
+    <a class="brand" href="#top" aria-label="Roblox AI home"><span class="brand-icon">✦</span><span>ROBLOX <strong>AI</strong></span></a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a class="hide-mobile" href="#styles">Explore styles</a>
+      <a class="hide-mobile" href="#collections">Collections</a>
+      <a class="btn" href="https://github.com/lensbykai-bit/roblox-ai" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    </nav>
+  </div></header>
+  <main class="shell" id="top">
+    <div class="hero">
+      <div>
+        <span class="eyebrow"><span class="dot"></span> OPEN VISUAL REFERENCE LIBRARY</span>
+        <h1>Inspire your next <em>Roblox world.</em></h1>
+        <p>Discover curated UI designs, game art directions, animations, visual effects, and creator documentation. Find the right references. Build something original.</p>
+        <p class="khmer" lang="km">បណ្ណាល័យរូបគំរូសម្រាប់អ្នកបង្កើតហ្គេម Roblox — ស្វែងរក UI, Design, Animation និង Effects។</p>
+        <div class="actions"><a class="btn primary" href="#styles">Explore references ↓</a><a class="btn" href="#guide">How to use →</a></div>
+      </div>
+      <div class="hero-art" aria-label="Illustrations from the visual reference collection">
+        <div class="art-main"><img src="https://raw.githubusercontent.com/lensbykai-bit/roblox-ai/main/style-refs/cyberpunk/mockup-hud.png" alt="Cyberpunk Roblox interface reference" fetchpriority="high"></div>
+        <div class="art-small"><img src="https://raw.githubusercontent.com/lensbykai-bit/roblox-ai/main/style-refs/cartoon/mockup-shop.png" alt="Cartoon Roblox shop UI"></div>
+        <div class="art-small bottom"><img src="https://raw.githubusercontent.com/lensbykai-bit/roblox-ai/main/style-refs/studs/mockup-inventory.png" alt="Stud-style Roblox inventory UI"></div>
+        <span class="art-spark">✦ 25 design styles</span>
+      </div>
+    </div>
+    <div class="stats" aria-label="Catalog statistics">
+      <div class="stat"><strong>5,885</strong><span>Cataloged reference images</span></div>
+      <div class="stat"><strong>25</strong><span>Visual style categories</span></div>
+      <div class="stat"><strong>12</strong><span>Top-level collections</span></div>
+      <div class="stat"><strong>5</strong><span>Short reference clips</span></div>
+    </div>
+    <section id="styles">
+      <div class="sectionhead"><div><span class="overline">Explore the library</span><h2>Choose your visual direction</h2><p>Browse hand-picked samples, then open the full folder on GitHub.</p></div><a class="btn" href="https://github.com/lensbykai-bit/roblox-ai/tree/main/style-refs" target="_blank" rel="noopener noreferrer">All 25 styles ↗</a></div>
+      <div class="filterbox"><input class="search" id="search" type="search" aria-label="Search design styles" placeholder="Search styles, e.g. cartoon, sci-fi, RPG..."><div class="chips" aria-label="Filter styles"><button class="chip active" data-filter="All" aria-pressed="true">All</button><button class="chip" data-filter="Bright" aria-pressed="false">Bright</button><button class="chip" data-filter="Dark" aria-pressed="false">Dark</button><button class="chip" data-filter="Game" aria-pressed="false">Game UI</button></div></div>
+      <div class="grid" id="styleGrid"></div><div class="empty" id="empty">No matching styles. Try a different search.</div>
+    </section>
+    <section id="collections">
+      <div class="sectionhead"><div><span class="overline">Reference categories</span><h2>Browse every collection</h2><p>All links open the existing repository files and documentation.</p></div></div>
+      <div class="collections" id="collectionGrid"></div>
+    </section>
+    <section class="guide" id="guide">
+      <div><span class="overline">AI-assisted creation</span><h2>From inspiration to original design</h2><p class="section-sub">Use visual references to guide an AI design or coding assistant. Roblox game logic and Studio integration must be built separately.</p>
+        <ol class="steps"><li><span class="num">1</span><span>Choose a visual style and open its GitHub folder.</span></li><li><span class="num">2</span><span>Download or attach a reference image to your AI assistant.</span></li><li><span class="num">3</span><span>Describe the colors, layout, interactions, and game theme.</span></li><li><span class="num">4</span><span>Build and test your original interface in Roblox Studio.</span></li></ol>
+      </div>
+      <div class="prompt"><span class="prompttitle">Example AI prompt</span>
+        <pre id="promptText">I'm building an original Roblox experience.
+Use my attached image as visual inspiration.
+Study its layout, spacing, colors, and UI hierarchy.
+Create a readable, responsive Roblox UI design
+and provide Luau implementation instructions.
+Do not copy copyrighted artwork or logos.</pre>
+        <button class="btn" id="copyPrompt" type="button">Copy prompt ⧉</button>
+      </div>
+    </section>
+  </main>
+  <footer><div class="shell footer-inner"><div><strong>ROBLOX AI</strong> · Independent visual reference library.<br>Not affiliated with or endorsed by Roblox Corporation.</div><div><a href="https://github.com/lensbykai-bit/roblox-ai/blob/main/README.md#usage-and-attribution" target="_blank" rel="noopener noreferrer">Usage & attribution</a> · <a href="https://github.com/lensbykai-bit/roblox-ai" target="_blank" rel="noopener noreferrer">GitHub repository</a></div></div></footer>
+  <script>
+  (function(){
+    "use strict";
+    var root="https://github.com/lensbykai-bit/roblox-ai/tree/main/";
+    var raw="https://raw.githubusercontent.com/lensbykai-bit/roblox-ai/main/";
+    var styles=[
+      {name:"Modern Cartoon",folder:"cartoon",image:"mockup-shop.png",kind:"Bright",tag:"Playful",description:"Bright colors, rounded cards and friendly shop interfaces."},
+      {name:"Cyberpunk Neon",folder:"cyberpunk",image:"mockup-hud.png",kind:"Dark",tag:"Futuristic",description:"Electric purple and cyan panels with futuristic HUDs."},
+      {name:"Stud-style Roblox",folder:"studs",image:"mockup-inventory.png",kind:"Game",tag:"Classic",description:"Bold outlines, stud patterns and chunky buttons."},
+      {name:"Anime Fighter",folder:"anime",image:"mockup-hud.png",kind:"Game",tag:"Action",description:"High-energy interfaces inspired by action games."},
+      {name:"Cozy Kawaii",folder:"kawaii",image:"mockup-hud.png",kind:"Bright",tag:"Pastel",description:"Soft pastels and friendly cards for casual worlds."},
+      {name:"Horror",folder:"horror",image:"mockup-hud.png",kind:"Dark",tag:"Atmospheric",description:"Muted interfaces with moody horror styling."},
+      {name:"Simulator",folder:"simulator",image:"mockup-shop.png",kind:"Bright",tag:"Progression",description:"Currency counters, rewards, inventory and shops."},
+      {name:"Speed & Racing",folder:"speed",image:"mockup-hud.png",kind:"Game",tag:"Racing",description:"Motion-inspired HUDs and energetic racing overlays."},
+      {name:"Space",folder:"space",image:"mockup-hud.png",kind:"Dark",tag:"Cosmic",description:"Starfield-inspired controls with vibrant highlights."},
+      {name:"Tycoon",folder:"tycoon",image:"mockup-shop.png",kind:"Game",tag:"Builder",description:"Shop cards, progression panels and business UI."},
+      {name:"Fantasy RPG",folder:"medieval",image:"mockup-inventory.png",kind:"Game",tag:"Adventure",description:"Ornate panels and inventory screens for adventures."},
+      {name:"Glass UI",folder:"glass",image:"mockup-hud.png",kind:"Bright",tag:"Modern",description:"Airy transparent-style panels and clean controls."}
+    ];
+    var collections=[
+      {name:"Roblox Creator Docs",folder:"roblox-docs",count:"3,730 images",icon:"📘"},
+      {name:"Previews",folder:"previews",count:"707 images",icon:"🖼️"},
+      {name:"Game References",folder:"game-refs",count:"602 images",icon:"🎮"},
+      {name:"Visual References",folder:"visual-refs",count:"413 images",icon:"💎"},
+      {name:"Style References",folder:"style-refs",count:"293 images",icon:"🎨"},
+      {name:"UI Styles",folder:"ui-styles",count:"69 images",icon:"🧩"},
+      {name:"VFX",folder:"vfx",count:"28 images",icon:"✨"},
+      {name:"Animations",folder:"animations",count:"13 images",icon:"🏃"},
+      {name:"SFX",folder:"sfx",count:"10 images",icon:"🔊"},
+      {name:"Logos",folder:"logos",count:"8 images",icon:"🔷"},
+      {name:"Thumbnails",folder:"thumbnails",count:"8 images",icon:"🪄"},
+      {name:"Cutscenes",folder:"cutscenes",count:"4 images",icon:"🎬"}
+    ];
+    var grid=document.getElementById("styleGrid"),cgrid=document.getElementById("collectionGrid"),search=document.getElementById("search"),active="All";
+    function draw(){
+      var q=search.value.toLowerCase().trim();
+      var shown=styles.filter(function(s){return (active==="All"||s.kind===active)&&(s.name+" "+s.description+" "+s.tag).toLowerCase().indexOf(q)>=0;});
+      grid.innerHTML=shown.map(function(s){
+        return '<article class="tile"><a href="'+root+'style-refs/'+s.folder+'" target="_blank" rel="noopener noreferrer" aria-label="Open '+s.name+' references"><img loading="lazy" src="'+raw+'style-refs/'+s.folder+'/'+s.image+'" alt="'+s.name+' interface mockup"></a><div class="tile-text"><div class="tile-row"><h3>'+s.name+'</h3><span class="tile-tag">'+s.tag+'</span></div><p>'+s.description+'</p><a class="tile-link" href="'+root+'style-refs/'+s.folder+'" target="_blank" rel="noopener noreferrer">Explore references ↗</a></div></article>';
+      }).join("");
+      document.getElementById("empty").style.display=shown.length?"none":"block";
+    }
+    cgrid.innerHTML=collections.map(function(c){return '<a class="collection" href="'+root+c.folder+'" target="_blank" rel="noopener noreferrer"><span class="coll-left"><span class="coll-icon" aria-hidden="true">'+c.icon+'</span><span><span class="coll-name">'+c.name+'</span><br><span class="coll-count">'+c.count+'</span></span></span><span class="coll-arrow" aria-hidden="true">↗</span></a>';}).join("");
+    document.querySelectorAll(".chip").forEach(function(btn){btn.addEventListener("click",function(){active=btn.dataset.filter;document.querySelectorAll(".chip").forEach(function(b){var on=b===btn;b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on));});draw();});});
+    search.addEventListener("input",draw);draw();
+    document.getElementById("copyPrompt").addEventListener("click",function(){var btn=this;var content=document.getElementById("promptText").textContent;function ok(){btn.textContent="Copied ✓";setTimeout(function(){btn.textContent="Copy prompt ⧉";},1800);}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(content).then(ok).catch(function(){btn.textContent="Select prompt to copy";});}else{btn.textContent="Select prompt to copy";}
+    });
+  })();
+  </script>
+</body>
+</html>
