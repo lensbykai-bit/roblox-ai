@@ -73,12 +73,12 @@
       <div class="stat"><strong>5</strong><span>Short reference clips</span></div>
     </div>
     <section id="styles">
-      <div class="sectionhead"><div><span class="overline">Explore the library</span><h2>Choose your visual direction</h2><p>Browse hand-picked samples, then open the full folder on GitHub.</p></div><a class="btn" href="https://github.com/lensbykai-bit/roblox-ai/tree/main/style-refs" target="_blank" rel="noopener noreferrer">All 25 styles ↗</a></div>
+      <div class="sectionhead"><div><span class="overline">Explore the library</span><h2>Choose your visual direction</h2><p>Browse hand-picked samples, then open the full gallery right here.</p></div><a class="btn" href="/collection.html?path=style-refs">All 25 styles →</a></div>
       <div class="filterbox"><input class="search" id="search" type="search" aria-label="Search design styles" placeholder="Search styles, e.g. cartoon, sci-fi, RPG..."><div class="chips" aria-label="Filter styles"><button class="chip active" data-filter="All" aria-pressed="true">All</button><button class="chip" data-filter="Bright" aria-pressed="false">Bright</button><button class="chip" data-filter="Dark" aria-pressed="false">Dark</button><button class="chip" data-filter="Game" aria-pressed="false">Game UI</button></div></div>
       <div class="grid" id="styleGrid"></div><div class="empty" id="empty">No matching styles. Try a different search.</div>
     </section>
     <section id="collections">
-      <div class="sectionhead"><div><span class="overline">Reference categories</span><h2>Browse every collection</h2><p>All links open the existing repository files and documentation.</p></div></div>
+      <div class="sectionhead"><div><span class="overline">Reference categories</span><h2>Browse every collection</h2><p>Open each collection here to explore its folders, images, and videos.</p></div></div>
       <div class="collections" id="collectionGrid"></div>
     </section>
     <section class="guide" id="guide">
@@ -100,7 +100,7 @@ Do not copy copyrighted artwork or logos.</pre>
   <script>
   (function(){
     "use strict";
-    var root="https://github.com/lensbykai-bit/roblox-ai/tree/main/";
+    var root="/collection.html?path=";
     var raw="https://raw.githubusercontent.com/lensbykai-bit/roblox-ai/main/";
     var styles=[
       {name:"Modern Cartoon",folder:"cartoon",image:"mockup-shop.png",kind:"Bright",tag:"Playful",description:"Bright colors, rounded cards and friendly shop interfaces."},
@@ -135,11 +135,11 @@ Do not copy copyrighted artwork or logos.</pre>
       var q=search.value.toLowerCase().trim();
       var shown=styles.filter(function(s){return (active==="All"||s.kind===active)&&(s.name+" "+s.description+" "+s.tag).toLowerCase().indexOf(q)>=0;});
       grid.innerHTML=shown.map(function(s){
-        return '<article class="tile"><a href="'+root+'style-refs/'+s.folder+'" target="_blank" rel="noopener noreferrer" aria-label="Open '+s.name+' references"><img loading="lazy" src="'+raw+'style-refs/'+s.folder+'/'+s.image+'" alt="'+s.name+' interface mockup"></a><div class="tile-text"><div class="tile-row"><h3>'+s.name+'</h3><span class="tile-tag">'+s.tag+'</span></div><p>'+s.description+'</p><a class="tile-link" href="'+root+'style-refs/'+s.folder+'" target="_blank" rel="noopener noreferrer">Explore references ↗</a></div></article>';
+        return '<article class="tile"><a href="'+root+'style-refs/'+s.folder+'" aria-label="Open '+s.name+' references"><img loading="lazy" src="'+raw+'style-refs/'+s.folder+'/'+s.image+'" alt="'+s.name+' interface mockup"></a><div class="tile-text"><div class="tile-row"><h3>'+s.name+'</h3><span class="tile-tag">'+s.tag+'</span></div><p>'+s.description+'</p><a class="tile-link" href="'+root+'style-refs/'+s.folder+'">Explore references →</a></div></article>';
       }).join("");
       document.getElementById("empty").style.display=shown.length?"none":"block";
     }
-    cgrid.innerHTML=collections.map(function(c){return '<a class="collection" href="'+root+c.folder+'" target="_blank" rel="noopener noreferrer"><span class="coll-left"><span class="coll-icon" aria-hidden="true">'+c.icon+'</span><span><span class="coll-name">'+c.name+'</span><br><span class="coll-count">'+c.count+'</span></span></span><span class="coll-arrow" aria-hidden="true">↗</span></a>';}).join("");
+    cgrid.innerHTML=collections.map(function(c){return '<a class="collection" href="'+root+c.folder+'"><span class="coll-left"><span class="coll-icon" aria-hidden="true">'+c.icon+'</span><span><span class="coll-name">'+c.name+'</span><br><span class="coll-count">'+c.count+'</span></span></span><span class="coll-arrow" aria-hidden="true">→</span></a>';}).join("");
     document.querySelectorAll(".chip").forEach(function(btn){btn.addEventListener("click",function(){active=btn.dataset.filter;document.querySelectorAll(".chip").forEach(function(b){var on=b===btn;b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on));});draw();});});
     search.addEventListener("input",draw);draw();
     document.getElementById("copyPrompt").addEventListener("click",function(){var btn=this;var content=document.getElementById("promptText").textContent;function ok(){btn.textContent="Copied ✓";setTimeout(function(){btn.textContent="Copy prompt ⧉";},1800);}
